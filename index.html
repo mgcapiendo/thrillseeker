@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <title>Thrill Seeker</title>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Delius Unicase"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
@@ -28,8 +32,37 @@
       <h1>Thrill Seeker</h1>
 
       <div class="navbar">
-        <button class="info">Game Info</button>
-        <button class="settings">Settings</button>
+        <!-- Game Info Modal -->
+        <button id="infoopen">Game Info</button>
+        <div class="infoModalcontainer" id="info-container">
+          <div class="modal">
+            <h1>Instructions</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus a
+              adipisci, odio sunt voluptatibus, quasi in illo sit harum
+              aspernatur nostrum corporis aperiam excepturi expedita provident,
+              inventore fugiat aliquid natus.
+            </p>
+            <button id="infoclose">Close</button>
+          </div>
+        </div>
+        <!-- End Game Info Modal -->
+
+        <!-- Settings Modal -->
+        <button id="settingsopen">Settings</button>
+        <div class="settingsModalcontainer" id="settings-container">
+          <div class="modal">
+            <h1>Settings</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus a
+              adipisci, odio sunt voluptatibus, quasi in illo sit harum
+              aspernatur nostrum corporis aperiam excepturi expedita provident,
+              inventore fugiat aliquid natus.
+            </p>
+            <button id="settingsclose">Close</button>
+          </div>
+        </div>
+        <!-- End Settings Modal -->
       </div>
 
       <img
@@ -51,7 +84,7 @@
         />
       </map>
 
-      <div>
+      <div class="footer">
         <p>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis
           ea veniam repellat. Fugiat debitis iure nesciunt nihil quasi a,
@@ -60,6 +93,7 @@
         </p>
       </div>
     </div>
+
     <!-- End of Main game container-->
 
     <script src="indexscript.js"></script>
