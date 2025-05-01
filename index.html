@@ -30,22 +30,38 @@
       <div class="navbar">
         <button class="info">Game Info</button>
         <button class="settings">Settings</button>
-        <button class="start">Start</button>
       </div>
 
       <img
         class="images"
-        src="https://www.universalfamilyvacations.com/wp-content/uploads/2017/09/Universal-Orlando-Resort-Map-1080x675.jpg"
+        src="images/map.jpg"
         alt="map of universal"
+        usemap="#workmap"
       />
 
-      <div class="controls">
-        <button class="round">Round Counter</button>
-        <button class="timer">Timer</button>
+      <map name="workmap">
+        <area shape="circle" coords="508, 99, 50" href="parks/ioa.html" />
+
+        <area shape="circle" coords="933,99,39" href="parks/us.html" />
+
+        <area
+          shape="poly"
+          coords="933,99,972,93,102,58,112,59,88,85,33,100,41,132,171,132,181,111,135,97"
+          href="parks/vb.html"
+        />
+      </map>
+
+      <div>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis
+          ea veniam repellat. Fugiat debitis iure nesciunt nihil quasi a,
+          architecto delectus reiciendis officiis, sunt mollitia, cumque dolorum
+          doloribus velit ex?
+        </p>
       </div>
     </div>
     <!-- End of Main game container-->
 
-    <script src="scripts.js"></script>
+    <script src="indexscript.js"></script>
   </body>
 </html>
