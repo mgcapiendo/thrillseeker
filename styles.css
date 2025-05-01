@@ -12,11 +12,16 @@ button {
   color: white;
   font-size: 20px;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 30px;
   border-radius: 5px;
   cursor: pointer;
 }
 
+.coverimages {
+  padding-bottom: 30px;
+}
+
+/* MODAL STUFF */
 .modal-container {
   position: fixed;
   top: 0;
@@ -41,16 +46,45 @@ button {
 }
 
 .modal h1 {
-  margin: 0 0 20px 0;
+  font-style: italic;
 }
+/* END MODAL STUFF */
 
+/*GAME CONTAINER*/
 .game-container {
-  width: 100%;
   display: none;
-  justify-items: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.images {
-  display: flex;
-  flex-flow: column wrap;
+.game-container h1 {
+  margin-bottom: 20px;
+  font-style: italic;
 }
+
+.game-container .navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.game-container .navbar button {
+  flex-grow: 1;
+  margin: 10px;
+}
+
+.game-container .controls {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.game-container .controls button {
+  flex-grow: 1;
+  margin: 10px;
+}
+/*END GAME CONTAINER*/
