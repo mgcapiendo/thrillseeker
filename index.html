@@ -59,6 +59,32 @@
               aspernatur nostrum corporis aperiam excepturi expedita provident,
               inventore fugiat aliquid natus.
             </p>
+
+            <div class="settings-selector">
+              <!-- Difficulty Settings -->
+              <!-- Need a drop down menu to choose difficulty: easy, medium, hard-->
+              <label for="difficulty">Choose a Difficulty</label>
+              <select name="difficulty" id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+              </select>
+              <!-- End Difficulty Settings -->
+
+              <!-- Round Settings -->
+              <!-- Need a drop down menu to choose rounds: quick, normal, long -->
+              <label for="round">Choose rounds</label>
+              <select name="round" id="round">
+                <option value="quick">Quick</option>
+                <option value="normal">Normal</option>
+                <option value="long">Long</option>
+              </select>
+              <!-- End round Settings -->
+
+              <!-- difficulty: the timer will be easy=20s medium=10s hard=5s  -->
+              <!-- rounds: the amount will be quick=3r normal=5r long=7r -->
+            </div>
+
             <button id="settingsclose">Close</button>
           </div>
         </div>
