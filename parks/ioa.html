@@ -58,7 +58,6 @@
               <!-- End Difficulty Settings -->
 
               <!-- Round Settings -->
-              <!-- Need a drop down menu to choose rounds: quick, normal, long -->
               <label for="round">Choose rounds</label>
               <select name="round" id="round">
                 <option value="quick">Quick</option>
@@ -66,9 +65,6 @@
                 <option value="long">Long</option>
               </select>
               <!-- End round Settings -->
-
-              <!-- difficulty: the timer will be easy=20s medium=10s hard=5s  -->
-              <!-- rounds: the amount will be quick=3r normal=5r long=7r -->
             </div>
 
             <button id="settingsclose">Close</button>
@@ -77,10 +73,42 @@
         <!-- End Settings Modal -->
 
         <!-- Start Modal -->
-        <button class="start">Start</button>
+        <button id="startopen">Start</button>
+        <div class="startgamemodal-container" id="startgame-container">
+          <div class="modal">
+            <h1>Thrill Seeking at Islands of Adventure</h1>
+            <p>
+              Text explaining either to observe image, then go to guess page
+              where it will say make guess, then make it say your result after
+              guessing
+            </p>
 
-        <!-- This should blank out everything and open the game screen modal  -->
+            <!-- GAME MECHANICS -->
 
+            <!-- Cycle through this round amount of times -->
+            <!-- 1.) Need to be able to grab and use random images from folder-->
+            <!-- 2.) Need to make the guessing modal pop up when timer runs out viewing -->
+            <!--3.) Need to make the result modal pop up when the timer runs out for guessing -->
+            <img
+              src="../images/photo1.jpg"
+              alt="photo1 location"
+              width="800px"
+              height="auto"
+            />
+            <!-- ready to guess button -->
+            <button id="guessbtn">Ready</button>
+
+            <!-- ready to submit button -->
+
+            <!-- next round button -->
+
+            <!-- once rounds over need an exit button -->
+
+            <!-- shows results at end -->
+
+            <button id="startclose">Close</button>
+          </div>
+        </div>
         <!-- End Settings Modal -->
       </div>
 
@@ -96,6 +124,7 @@
         <button class="timer">Waiting on Settings...</button>
       </div>
     </div>
+
     <!-- End of Main game container-->
 
     <script src="../parkscripts.js"></script>

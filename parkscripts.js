@@ -15,6 +15,7 @@ infoClosebutton.addEventListener("click", () => {
   infomodalContainer.style.display = "none";
 });
 
+//SETTINGS MODAL
 const settingsmodalContainer = document.getElementById("settings-container");
 // set the settings modal to be invisible at first
 settingsmodalContainer.style.display = "none";
@@ -80,10 +81,33 @@ roundSelect.addEventListener("change", function () {
   selectedRounds = roundSelect.value;
   updateRoundDisplay();
 });
+// End of Rounds
 
-// End of Rounds------------------------------------------------
+// STARTGAME MODAL
+const startgamemodalContainer = document.getElementById("startgame-container");
+startgamemodalContainer.style.display = "none";
 
+const startOpenbutton = document.getElementById("startopen");
+startOpenbutton.addEventListener("click", () => {
+  startgamemodalContainer.style.display = "flex";
+});
+
+const startClosebutton = document.getElementById("startclose");
+startClosebutton.addEventListener("click", () => {
+  startgamemodalContainer.style.display = "none";
+});
+
+//End of Rounds------------------------------------------------
+
+//Start Button will send the user to the game screen for that park
+//Need to make the actual game modal that shows rounds and timer
+//The modal will have countdown modal popup and close after it counts down,
+//Then round amount of randomly selected images will be appear
 //
-// Start of Game --------------------------------------------------------
+//the result screen if it was right or not and where it was
+//
+//--------------------------Count Down Modal---------------------
+//--------------------------Guessing Modal-----------------------
+//--------------------------Result Modal-------------------------
 
-// End Game kek ---------------------------------------------------------
+//End of Game Modal kek---------------------------------------------------------
