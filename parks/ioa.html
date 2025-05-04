@@ -73,7 +73,10 @@
         <!-- End Settings Modal -->
 
         <!-- Start Modal -->
-        <button id="startopen">Start</button>
+
+        <button id="startopen" onclick="setTimeout(showGuessPhase, 3000)">
+          Start
+        </button>
         <div class="startgamemodal-container" id="startgame-container">
           <div class="modal">
             <h1>Thrill Seeking at Islands of Adventure</h1>
@@ -83,33 +86,46 @@
               guessing
             </p>
 
-            <!-- GAME MECHANICS -->
+            <div id="observephase">
+              <img
+                src="../images/photo1.jpg"
+                alt="photo1 location"
+                width="800px"
+                height="auto"
+              />
+            </div>
 
-            <!-- Cycle through this round amount of times -->
-            <!-- 1.) Need to be able to grab and use random images from folder-->
-            <!-- 2.) Need to make the guessing modal pop up when timer runs out viewing -->
-            <!--3.) Need to make the result modal pop up when the timer runs out for guessing -->
-            <img
-              src="../images/photo1.jpg"
-              alt="photo1 location"
-              width="800px"
-              height="auto"
-            />
-            <!-- ready to guess button -->
-            <button id="guessbtn">Ready</button>
+            <div id="guessphase" style="display: none">
+              <img
+                src="../images/map2.jpg"
+                alt="map"
+                width="800px"
+                height="auto"
+              />
+              <button id="submitbtn" onclick="showResultPhase()">Submit</button>
+            </div>
+            <!-- When user goes to guess phase they have a set amount of time to guess
+            
+            They either guess a location in time and depending on where they click they will either be given a score of wrong or correct
 
-            <!-- ready to submit button -->
+            If the user lets the timer run out they lose a point
+            
+            -->
 
-            <!-- next round button -->
-
-            <!-- once rounds over need an exit button -->
-
-            <!-- shows results at end -->
-
-            <button id="startclose">Close</button>
+            <div id="resultphase" style="display: none">
+              <img
+                src="../images/map.jpg"
+                alt="map"
+                width="800px"
+                height="auto"
+              />
+              <button id="nextbtn" onclick="showObservePhase()">
+                Next Round
+              </button>
+            </div>
           </div>
         </div>
-        <!-- End Settings Modal -->
+        <!-- End Start Modal -->
       </div>
 
       <img

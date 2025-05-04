@@ -97,17 +97,21 @@ startClosebutton.addEventListener("click", () => {
   startgamemodalContainer.style.display = "none";
 });
 
-//End of Rounds------------------------------------------------
+// GAME MECHANICS
+function showGuessPhase() {
+  document.getElementById("observephase").style.display = "none";
+  document.getElementById("guessphase").style.display = "flex";
+  document.getElementById("resultphase").style.display = "none";
+}
 
-//Start Button will send the user to the game screen for that park
-//Need to make the actual game modal that shows rounds and timer
-//The modal will have countdown modal popup and close after it counts down,
-//Then round amount of randomly selected images will be appear
-//
-//the result screen if it was right or not and where it was
-//
-//--------------------------Count Down Modal---------------------
-//--------------------------Guessing Modal-----------------------
-//--------------------------Result Modal-------------------------
+function showResultPhase() {
+  document.getElementById("observephase").style.display = "none";
+  document.getElementById("guessphase").style.display = "none";
+  document.getElementById("resultphase").style.display = "flex";
+}
 
-//End of Game Modal kek---------------------------------------------------------
+function showObservePhase() {
+  document.getElementById("observephase").style.display = "flex";
+  document.getElementById("guessphase").style.display = "none";
+  document.getElementById("resultphase").style.display = "none";
+}
