@@ -6,6 +6,24 @@ a {
   color: black;
 }
 
+.bold {
+  font-weight: bold;
+}
+
+.homesettings {
+  text-align: left;
+}
+
+.ioasettings {
+  text-align: left;
+}
+
+.footer {
+  font-weight: bold;
+  text-align: center;
+  align-items: center;
+}
+
 body {
   font-family: "Delius Unicase";
   margin: 0;
@@ -19,6 +37,8 @@ body {
 }
 
 button {
+  font-family: "Delius Unicase";
+  font-weight: bold;
   background-color: orange;
   color: white;
   font-size: 20px;

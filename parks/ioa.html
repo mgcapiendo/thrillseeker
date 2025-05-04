@@ -39,17 +39,20 @@
         <div class="settingsModalcontainer" id="settings-container">
           <div class="modal">
             <h1>Settings</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus a
-              adipisci, odio sunt voluptatibus, quasi in illo sit harum
-              aspernatur nostrum corporis aperiam excepturi expedita provident,
-              inventore fugiat aliquid natus.
-            </p>
+            <ul class="ioasettings">
+              <li>
+                Difficulty changes the amount of time you have each round.
+                <strong>*Under Maintence*</strong>
+              </li>
+              <li>
+                Rounds changes the amount of rounds you will play through.
+              </li>
+            </ul>
 
             <div class="settings-selector">
               <!-- Difficulty Settings -->
               <!-- Need a drop down menu to choose difficulty: easy, medium, hard-->
-              <label for="difficulty">Choose a Difficulty</label>
+              <label for="difficulty" class="bold">Choose a Difficulty</label>
               <select name="difficulty" id="difficulty">
                 <option value="easy">Easy</option>
                 <option value="medium">Medium</option>
@@ -58,7 +61,7 @@
               <!-- End Difficulty Settings -->
 
               <!-- Round Settings -->
-              <label for="round">Choose rounds</label>
+              <label for="round" class="bold">Choose rounds</label>
               <select name="round" id="round">
                 <option value="quick">Quick</option>
                 <option value="normal">Normal</option>
@@ -77,15 +80,13 @@
 
         <div class="startgamemodal-container" id="startgame-container">
           <div class="modal">
-            <h1>Thrill Seeking at Islands of Adventure</h1>
-
             <div id="observephase" class="phasestruct">
-              <p>Observe Phase</p>
+              <h1>Pay Attention To Your Location!</h1>
               <img src="" width="800px" height="auto" />
             </div>
 
             <div id="guessphase" style="display: none" class="phasestruct">
-              <p>Guess Phase</p>
+              <h1>Where Was The Photo Taken?</h1>
               <img
                 src="../images/ioamap.jpg"
                 alt="ioamap"
@@ -115,19 +116,9 @@
                   onclick="handleLocationClick('location_3'); return false;"
                 />
               </map>
-
-              <!-- 
-              1. Set all clickable locations to wrong on default
-              2. When a random image is selected have it not only update the image shown but also change one of the clickable locations to correct
-              3. When a user clicks on a spot it should record if they got a point or not before either going to next round or going to results
-              4. Then after each round need to reset it to the default of all being negative
-              -->
-
-              <!-- <button id="submitbtn" onclick="showResultPhase()">Submit</button> -->
             </div>
 
             <div id="resultphase" style="display: none" class="phasestruct">
-              <p>Result Phase</p>
               <img
                 src="https://i.kym-cdn.com/entries/icons/facebook/000/043/534/cover4.jpg"
                 alt="map"
@@ -135,7 +126,7 @@
                 height="auto"
               />
 
-              <p id="final-score">Your Score: 0 out of 0</p>
+              <h2 id="final-score">You Scored: 0 out of 0</h2>
 
               <button id="gameclose">Exit</button>
             </div>

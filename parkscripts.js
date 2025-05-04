@@ -80,6 +80,8 @@ function updateRoundDisplay() {
 roundSelect.addEventListener("change", function () {
   selectedRounds = roundSelect.value;
   updateRoundDisplay();
+
+  totalRounds = roundSettings[selectedRounds];
 });
 // End of Rounds
 
@@ -90,6 +92,8 @@ startgamemodalContainer.style.display = "none";
 const startOpenbutton = document.getElementById("startopen");
 startOpenbutton.addEventListener("click", () => {
   startgamemodalContainer.style.display = "flex";
+
+  totalRounds = roundSettings[selectedRounds];
 
   currentRound = 1;
   score = 0;
@@ -122,13 +126,19 @@ function randomImage() {
 
   setTimeout(function () {
     const img = document.querySelector("#observephase img");
-    const randomNum = Math.floor(Math.random() * 3) + 1;
-    img.src = "../ioaimages/random_" + randomNum + ".jpg";
+    img.src = "";
 
-    setCorrectLocation(randomNum);
-    resetLocations();
+    showObservePhase();
 
-    setTimeout(showGuessPhase, 2000);
+    setTimeout(function () {
+      const randomNum = Math.floor(Math.random() * 3) + 1;
+      img.src = "../ioaimages/random_" + randomNum + ".jpg";
+
+      setCorrectLocation(randomNum);
+      resetLocations();
+
+      setTimeout(showGuessPhase, 5000);
+    }, 100);
   });
 }
 
@@ -183,3 +193,5 @@ function handleLocationClick(locationID) {
     score = 0;
   }
 }
+
+//timer
