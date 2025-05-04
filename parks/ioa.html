@@ -73,12 +73,7 @@
         <!-- End Settings Modal -->
 
         <!-- Start Modal -->
-        <button
-          id="startopen"
-          onclick="setTimeout(showGuessPhase, 2000); randomImage()"
-        >
-          Start
-        </button>
+        <button id="startopen">Start</button>
 
         <div class="startgamemodal-container" id="startgame-container">
           <div class="modal">
@@ -92,25 +87,57 @@
             <div id="guessphase" style="display: none" class="phasestruct">
               <p>Guess Phase</p>
               <img
-                src="../images/map2.jpg"
-                alt="map"
-                width="800px"
-                height="auto"
+                src="../images/ioamap.jpg"
+                alt="ioamap"
+                usemap="#locations"
               />
-              <button id="submitbtn" onclick="showResultPhase()">Submit</button>
+
+              <map name="locations">
+                <area
+                  shape="circle"
+                  coords="321, 349, 18"
+                  id="location_1"
+                  href="#"
+                  onclick="handleLocationClick('location_1'); return false;"
+                />
+                <area
+                  shape="circle"
+                  coords="309, 218, 17"
+                  id="location_2"
+                  href="#"
+                  onclick="handleLocationClick('location_2'); return false;"
+                />
+                <area
+                  shape="circle"
+                  coords="639, 385, 17"
+                  id="location_3"
+                  href="#"
+                  onclick="handleLocationClick('location_3'); return false;"
+                />
+              </map>
+
+              <!-- 
+              1. Set all clickable locations to wrong on default
+              2. When a random image is selected have it not only update the image shown but also change one of the clickable locations to correct
+              3. When a user clicks on a spot it should record if they got a point or not before either going to next round or going to results
+              4. Then after each round need to reset it to the default of all being negative
+              -->
+
+              <!-- <button id="submitbtn" onclick="showResultPhase()">Submit</button> -->
             </div>
 
             <div id="resultphase" style="display: none" class="phasestruct">
               <p>Result Phase</p>
               <img
-                src="../images/map.jpg"
+                src="https://i.kym-cdn.com/entries/icons/facebook/000/043/534/cover4.jpg"
                 alt="map"
                 width="800px"
                 height="auto"
               />
-              <button id="nextbtn" onclick="showObservePhase()">
-                Next Round
-              </button>
+
+              <p id="final-score">Your Score: 0 out of 0</p>
+
+              <button id="gameclose">Exit</button>
             </div>
           </div>
         </div>
@@ -119,7 +146,9 @@
 
       <img
         class="images"
-        src="https://static.wikia.nocookie.net/slycooperfanfic/images/4/4e/Islands_of_Adventure_.jpg/revision/latest?cb=20130602163958"
+        src="../images/ioamap.jpg"
+        width="740px"
+        height="auto"
         alt="map of islands of adventure"
       />
 

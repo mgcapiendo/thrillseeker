@@ -90,11 +90,11 @@ startgamemodalContainer.style.display = "none";
 const startOpenbutton = document.getElementById("startopen");
 startOpenbutton.addEventListener("click", () => {
   startgamemodalContainer.style.display = "flex";
-});
 
-const startClosebutton = document.getElementById("startclose");
-startClosebutton.addEventListener("click", () => {
-  startgamemodalContainer.style.display = "none";
+  currentRound = 1;
+  score = 0;
+
+  randomImage();
 });
 
 // GAME MECHANICS
@@ -118,11 +118,68 @@ function showObservePhase() {
 
 //Cycle
 function randomImage() {
+  showObservePhase();
+
   setTimeout(function () {
     const img = document.querySelector("#observephase img");
-
     const randomNum = Math.floor(Math.random() * 3) + 1;
-
     img.src = "../ioaimages/random_" + randomNum + ".jpg";
+
+    setCorrectLocation(randomNum);
+    resetLocations();
+
+    setTimeout(showGuessPhase, 2000);
   });
+}
+
+const closegame = document.getElementById("game_container");
+
+const gameClosebutton = document.getElementById("gameclose");
+gameClosebutton.addEventListener("click", () => {
+  startgamemodalContainer.style.display = "none";
+  showObservePhase();
+});
+
+//Image Map
+
+let currentRound = 1;
+let totalRounds = roundSettings[selectedRounds];
+let score = 0;
+let currentCorrectLocation = null;
+
+function resetLocations() {
+  document.getElementById("location_1").onclick = function () {
+    handleLocationClick("location_1");
+  };
+  document.getElementById("location_2").onclick = function () {
+    handleLocationClick("location_2");
+  };
+  document.getElementById("location_3").onclick = function () {
+    handleLocationClick("location_3");
+  };
+}
+
+function setCorrectLocation(randomNum) {
+  currentCorrectLocation = "location_" + randomNum;
+}
+
+function handleLocationClick(locationID) {
+  if (locationID === currentCorrectLocation) {
+    score++;
+  } else {
+  }
+
+  if (currentRound < totalRounds) {
+    currentRound++;
+
+    randomImage();
+  } else {
+    showResultPhase();
+
+    document.getElementById("final-score").textContent =
+      "Your Score: " + score + " Out of " + totalRounds;
+
+    currentRound = 1;
+    score = 0;
+  }
 }
