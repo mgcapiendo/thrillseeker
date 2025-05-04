@@ -145,3 +145,8 @@ button {
   pointer-events: auto;
   background-color: #fff;
 }
+
+.phasestruct {
+  display: flex;
+  flex-direction: column;
+}

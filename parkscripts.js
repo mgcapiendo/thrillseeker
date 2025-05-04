@@ -115,3 +115,14 @@ function showObservePhase() {
   document.getElementById("guessphase").style.display = "none";
   document.getElementById("resultphase").style.display = "none";
 }
+
+//Cycle
+function randomImage() {
+  setTimeout(function () {
+    const img = document.querySelector("#observephase img");
+
+    const randomNum = Math.floor(Math.random() * 3) + 1;
+
+    img.src = "../ioaimages/random_" + randomNum + ".jpg";
+  });
+}
