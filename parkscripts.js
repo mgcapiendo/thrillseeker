@@ -137,11 +137,7 @@ function randomImage() {
       let randomNum;
       do {
         randomNum = Math.floor(Math.random() * 8) + 1;
-      } while (usedImage.includes(randomNum) && usedImage.length < 8);
-
-      if (usedImage.length >= 8) {
-        usedImage = [];
-      }
+      } while (usedImage.includes(randomNum));
 
       usedImage.push(randomNum);
 
