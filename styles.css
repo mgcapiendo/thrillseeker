@@ -15,6 +15,12 @@ a {
   cursor: pointer;
 }
 
+.startlogo {
+  width: auto;
+  height: auto;
+  padding-bottom: 30px;
+}
+
 .covergameinfoimage {
   display: flex;
   margin-left: auto;
