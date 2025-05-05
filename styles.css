@@ -6,6 +6,34 @@ a {
   color: black;
 }
 
+.gameinfoimage {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  height: auto;
+  cursor: pointer;
+}
+
+.closeinfoimage {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+  height: auto;
+  cursor: pointer;
+}
+
+.settingscloseimage {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+  height: auto;
+  cursor: pointer;
+  padding-top: 15px;
+}
+
 .bold {
   font-weight: bold;
 }
@@ -39,7 +67,7 @@ body {
 button {
   font-family: "Delius Unicase";
   font-weight: bold;
-  background-color: orange;
+  background-color: rgb(12, 102, 236);
   color: white;
   font-size: 20px;
   border: none;
