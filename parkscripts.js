@@ -36,7 +36,7 @@ const timerDisplay = document.querySelector(".timer");
 const settingsCloseButton = document.getElementById("settingsclose");
 
 const difficultySettings = {
-  easy: 20,
+  easy: 15,
   medium: 10,
   hard: 5,
 };
@@ -146,7 +146,7 @@ function randomImage() {
       setCorrectLocation(randomNum);
       resetLocations();
 
-      setTimeout(showGuessPhase, 5000);
+      setTimeout(showGuessPhase, difficultySettings[selectedDifficulty] * 1000);
     }, 100);
   });
 }
@@ -160,7 +160,6 @@ gameClosebutton.addEventListener("click", () => {
 });
 
 //Image Map
-
 let currentRound = 1;
 let totalRounds = roundSettings[selectedRounds];
 let score = 0;
