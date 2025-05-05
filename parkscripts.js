@@ -137,7 +137,7 @@ function randomImage() {
       let randomNum;
       do {
         randomNum = Math.floor(Math.random() * 8) + 1;
-      } while (usedImage.includes(randomNum) && usedImage.length < 3);
+      } while (usedImage.includes(randomNum) && usedImage.length < 8);
 
       if (usedImage.length >= 8) {
         usedImage = [];
@@ -171,9 +171,6 @@ let score = 0;
 let currentCorrectLocation = null;
 
 function resetLocations() {
-  document.getElementById("location_0").onclick = function () {
-    handleLocationClick("location_0");
-  };
   document.getElementById("location_1").onclick = function () {
     handleLocationClick("location_1");
   };
@@ -197,6 +194,9 @@ function resetLocations() {
   };
   document.getElementById("location_8").onclick = function () {
     handleLocationClick("location_8");
+  };
+  document.getElementById("location_0").onclick = function () {
+    handleLocationClick("location_0");
   };
 }
 
