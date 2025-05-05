@@ -97,6 +97,7 @@ startOpenbutton.addEventListener("click", () => {
 
   currentRound = 1;
   score = 0;
+  usedImage = [];
 
   randomImage();
 });
@@ -121,6 +122,8 @@ function showObservePhase() {
 }
 
 //Cycle
+let usedImage = [];
+
 function randomImage() {
   showObservePhase();
 
@@ -131,7 +134,17 @@ function randomImage() {
     showObservePhase();
 
     setTimeout(function () {
-      const randomNum = Math.floor(Math.random() * 3) + 1;
+      let randomNum;
+      do {
+        randomNum = Math.floor(Math.random() * 8) + 1;
+      } while (usedImage.includes(randomNum) && usedImage.length < 3);
+
+      if (usedImage.length >= 8) {
+        usedImage = [];
+      }
+
+      usedImage.push(randomNum);
+
       img.src = "../ioaimages/random_" + randomNum + ".jpg";
 
       setCorrectLocation(randomNum);
@@ -158,6 +171,9 @@ let score = 0;
 let currentCorrectLocation = null;
 
 function resetLocations() {
+  document.getElementById("location_0").onclick = function () {
+    handleLocationClick("location_0");
+  };
   document.getElementById("location_1").onclick = function () {
     handleLocationClick("location_1");
   };
@@ -166,6 +182,21 @@ function resetLocations() {
   };
   document.getElementById("location_3").onclick = function () {
     handleLocationClick("location_3");
+  };
+  document.getElementById("location_4").onclick = function () {
+    handleLocationClick("location_4");
+  };
+  document.getElementById("location_5").onclick = function () {
+    handleLocationClick("location_5");
+  };
+  document.getElementById("location_6").onclick = function () {
+    handleLocationClick("location_6");
+  };
+  document.getElementById("location_7").onclick = function () {
+    handleLocationClick("location_7");
+  };
+  document.getElementById("location_8").onclick = function () {
+    handleLocationClick("location_8");
   };
 }
 
@@ -191,7 +222,6 @@ function handleLocationClick(locationID) {
 
     currentRound = 1;
     score = 0;
+    usedImage = [];
   }
 }
-
-//timer
