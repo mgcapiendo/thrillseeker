@@ -36,6 +36,7 @@
 
     <!-- Main game container-->
     <div class="game-container" id="game_container">
+      <!-- home button -->
       <img
         class="coverimages"
         src="images/thrillseekerlogo.jpg"
@@ -44,17 +45,9 @@
         height="auto"
       />
 
+      <!-- nav bar -->
       <div class="navbar">
         <!-- Game Info Modal -->
-        <!-- <button id="infoopen">Game Info</button> -->
-        <img
-          class="gameinfoimage"
-          id="infoopen"
-          src="images/gameinfo.jpg"
-          alt="test"
-          width="300px"
-          height="auto"
-        />
 
         <div class="infoModalcontainer" id="info-container">
           <div class="modal">
@@ -74,44 +67,69 @@
             />
           </div>
         </div>
-        <!-- End Game Info Modal -->
-
-        <!-- Settings Modal -->
-
-        <!-- End Settings Modal -->
       </div>
 
-      <img
-        class="images"
-        src="images/map.jpg"
-        alt="map of universal"
-        usemap="#workmap"
-      />
+      <div class="locationcontainer">
+        <div class="universalmapcontainer" id="universalmap_container">
+          <div class="universalmap">
+            <img
+              class="images"
+              src="images/map.jpg"
+              alt="map of universal"
+              usemap="#universal_map"
+            />
 
-      <map name="workmap">
-        <area
-          shape="poly"
-          coords="560,398,529,390,511,364,459,357,452,344,430,331,427,314,412,294,385,266,380,244,361,227,354,202,360,186,375,168,405,161,415,158,449,158,480,164,519,158,515,137,484,136,481,122,455,131,450,106,469,96,468,72,476,71,492,62,494,41,504,60,525,66,531,63,535,72,542,81,567,89,552,99,544,112,553,123,541,121,527,132,526,154,541,160,573,154,584,128,591,141,604,144,618,147,629,153,651,183,654,199,697,209,683,251,670,305,621,340,597,350,587,391"
-          href="parks/ioa.html"
+            <map name="universal_map">
+              <area
+                shape="poly"
+                coords="560,398,529,390,511,364,459,357,452,344,430,331,427,314,412,294,385,266,380,244,361,227,354,202,360,186,375,168,405,161,415,158,449,158,480,164,519,158,515,137,484,136,481,122,455,131,450,106,469,96,468,72,476,71,492,62,494,41,504,60,525,66,531,63,535,72,542,81,567,89,552,99,544,112,553,123,541,121,527,132,526,154,541,160,573,154,584,128,591,141,604,144,618,147,629,153,651,183,654,199,697,209,683,251,670,305,621,340,597,350,587,391"
+                href="parks/ioa.html"
+              />
+
+              <area
+                shape="poly"
+                coords="920,58,893,78,847,84,851,101,886,104,898,120,916,136,915,161,889,175,884,192,830,194,784,195,776,221,749,222,751,253,765,268,772,275,768,298,777,302,784,310,778,353,734,357,736,405,758,424,816,419,833,430,871,434,853,384,847,361,871,342,932,340,936,322,955,317,1004,346,1032,325,1072,357,1077,324,1077,213,1062,184,1037,151,1006,151,987,169,937,157,937,136,973,117,977,102,1017,109,1020,84,972,76,952,59,936,54"
+                href="parks/us.html"
+              />
+
+              <area
+                shape="poly"
+                coords="107,55,116,62,131,88,147,103,182,108,178,134,146,135,120,150,120,175,207,179,227,158,255,165,244,230,213,276,187,322,148,368,110,372,72,354,56,322,20,272,3,265,2,190,5,177,40,170,53,142,39,134,29,102,82,96,90,79"
+                href="parks/vb.html"
+              />
+            </map>
+            <!-- <button id="disneyopen">More</button> -->
+          </div>
+        </div>
+        <div class="disneymapcontainer" id="disneymap-container">
+          <div>
+            <img src="images/map_disney.png" width="900px" height="auto" />
+          </div>
+        </div>
+        <!-- put list of maps -->
+        <img
+          class="disneyopenimage"
+          id="disneyopen"
+          src="images/disneylogo.jpg"
         />
-
-        <area
-          shape="poly"
-          coords="920,58,893,78,847,84,851,101,886,104,898,120,916,136,915,161,889,175,884,192,830,194,784,195,776,221,749,222,751,253,765,268,772,275,768,298,777,302,784,310,778,353,734,357,736,405,758,424,816,419,833,430,871,434,853,384,847,361,871,342,932,340,936,322,955,317,1004,346,1032,325,1072,357,1077,324,1077,213,1062,184,1037,151,1006,151,987,169,937,157,937,136,973,117,977,102,1017,109,1020,84,972,76,952,59,936,54"
-          href="parks/us.html"
+        <img
+          class="universalopenimage"
+          id="universalopen"
+          src="images/universallogo.jpg"
         />
-
-        <area
-          shape="poly"
-          coords="107,55,116,62,131,88,147,103,182,108,178,134,146,135,120,150,120,175,207,179,227,158,255,165,244,230,213,276,187,322,148,368,110,372,72,354,56,322,20,272,3,265,2,190,5,177,40,170,53,142,39,134,29,102,82,96,90,79"
-          href="parks/vb.html"
+        <!-- test for bottom navbar layout -->
+        <img
+          class="covergameinfoimage"
+          id="infoopen"
+          src="images/gameinfo.jpg"
+          align="right"
         />
-      </map>
+      </div>
 
-      <div class="footer">
+      <!-- <div class="footer">
         <h2>Click Where You Want To Play</h2>
         <h3>Current Available Maps: Islands of Adventure</h3>
-      </div>
+      </div> -->
     </div>
 
     <!-- End of Main game container-->

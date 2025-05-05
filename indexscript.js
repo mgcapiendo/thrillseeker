@@ -30,16 +30,20 @@ infoClosebutton.addEventListener("click", () => {
   infomodalContainer.style.display = "none";
 });
 
-const settingsmodalContainer = document.getElementById("settings-container");
-// set the settings modal to be invisible at first
-settingsmodalContainer.style.display = "none";
-// open the settings modal
-const settingsOpenbutton = document.getElementById("settingsopen");
-settingsOpenbutton.addEventListener("click", () => {
-  settingsmodalContainer.style.display = "flex";
+//universal map
+const universalmapContainer = document.getElementById("universalmap_container");
+//disney map
+const disneymapContainer = document.getElementById("disneymap-container");
+disneymapContainer.style.display = "none";
+
+const disneyOpenbutton = document.getElementById("disneyopen");
+disneyOpenbutton.addEventListener("click", () => {
+  universalmapContainer.style.display = "none";
+  disneymapContainer.style.display = "flex";
 });
-// close the settings modal
-const settingsClosebutton = document.getElementById("settingsclose");
-settingsClosebutton.addEventListener("click", () => {
-  settingsmodalContainer.style.display = "none";
+
+const universalOpenbutton = document.getElementById("universalopen");
+universalOpenbutton.addEventListener("click", () => {
+  universalmapContainer.style.display = "flex";
+  disneymapContainer.style.display = "none";
 });
