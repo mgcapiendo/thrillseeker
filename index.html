@@ -98,24 +98,36 @@
                 href="parks/vb.html"
               />
             </map>
-            <!-- <button id="disneyopen">More</button> -->
           </div>
         </div>
+
         <div class="disneymapcontainer" id="disneymap-container">
           <div>
-            <img src="images/map_disney.png" width="900px" height="auto" />
+            <img
+              src="images/map_disney.png"
+              width="900px"
+              height="auto"
+              usemap="#disneymap"
+            />
+
+            <map name="disneymap">
+              <area shape="poly"
+              coords="522,49,520,73,512,88,485,121,468,123,446,108,431,140,407,160,328,194,208,245,163,288,190,332,203,357,151,396,133,421,91,455,2,467,1,579,65,629,150,662,200,715,243,749,346,779,458,787,562,794,606,776,677,776,781,775,823,748,853,695,946,683,1008,672,1097,642,1111,598,1128,530,1141,503,1139,445,1115,421,1059,404,988,407,942,403,932,378,952,352,992,317,1028,277,1034,237,1018,201,970,170,899,155,862,158,815,153,769,137,742,165,708,164,662,151,580,128,559,116,542,102,534,88"
+              href="parks/disneyplaceholder.html"
+            </map>
           </div>
         </div>
+
         <!-- put list of maps -->
-        <img
-          class="disneyopenimage"
-          id="disneyopen"
-          src="images/disneylogo.jpg"
-        />
         <img
           class="universalopenimage"
           id="universalopen"
           src="images/universallogo.jpg"
+        />
+        <img
+          class="disneyopenimage"
+          id="disneyopen"
+          src="images/disneylogo.jpg"
         />
         <!-- test for bottom navbar layout -->
         <img
@@ -125,11 +137,6 @@
           align="right"
         />
       </div>
-
-      <!-- <div class="footer">
-        <h2>Click Where You Want To Play</h2>
-        <h3>Current Available Maps: Islands of Adventure</h3>
-      </div> -->
     </div>
 
     <!-- End of Main game container-->

@@ -8,6 +8,7 @@
       href="https://fonts.googleapis.com/css?family=Delius Unicase"
       rel="stylesheet"
     />
+
     <!-- icon -->
     <link
       rel="icon"
@@ -32,7 +33,7 @@
         <!-- <h1 id="home">Thrill Seeker</h1> -->
         <img
           id="home"
-          class="coverimages"
+          class="ingameimage"
           src="../images/thrillseekerlogo.jpg"
           alt="test"
           width="300px"
@@ -40,28 +41,179 @@
         />
       </a>
 
-      <p>Currently Under Maintence, Come Back Soon!</p>
-      <h5>Click the logo to return home</h5>
-
-      <!-- <div class="navbar">
-        <button class="info">Game Info</button>
-        <button class="settings">Settings</button>
-        <button class="start">Start</button>
+      <div class="controls">
+        <button class="round">Waiting on Settings...</button>
+        <button class="timer">Waiting on Settings...</button>
       </div>
 
       <img
         class="images"
-        src="https://dtjdesign.com/www/wp-content/uploads/2019/04/Volcano-Bay-1B_.jpg"
-        alt="map of volcano bay"
+        src="../images/vbmap.jpg"
+        width="740px"
+        height="auto"
+        alt="map of islands of adventure"
       />
 
-      <div class="controls">
-        <button class="round">Round Counter</button>
-        <button class="timer">Timer</button>
-      </div> -->
+      <div class="navbar">
+        <!-- Game Info Modal -->
+        <!-- <button id="infoopen">Game Info</button> -->
+        <img
+          class="gameinfoimage"
+          id="infoopen"
+          src="../images/gameinfo.jpg"
+          alt="test"
+          width="300px"
+          height="auto"
+        />
+
+        <div class="infoModalcontainer" id="info-container">
+          <div class="modal">
+            <h1>Instructions</h1>
+            <p>
+              You will have a set amount of rounds to guess the location of
+              where your photo was taken within the countdown timer by clicking
+              on the map with your guess
+            </p>
+            <!-- <button id="infoclose">Close</button> -->
+            <img
+              class="closeinfoimage"
+              id="infoclose"
+              src="../images/close.jpg"
+              alt="test"
+            />
+          </div>
+        </div>
+        <!-- End Game Info Modal -->
+
+        <!-- Settings Modal -->
+        <img
+          class="gameinfoimage"
+          id="settingsopen"
+          src="../images/settings.jpg"
+          alt="test"
+        />
+        <div class="settingsModalcontainer" id="settings-container">
+          <div class="modal">
+            <h1>Settings</h1>
+            <ul class="ioasettings">
+              <li>
+                Difficulty changes the amount of time you have each round.
+              </li>
+              <li>
+                Rounds changes the amount of rounds you will play through.
+              </li>
+            </ul>
+
+            <div class="settings-selector">
+              <label for="round" class="bold">Choose rounds</label>
+              <select name="round" id="round">
+                <option value="quick">Quick</option>
+                <option value="normal">Normal</option>
+                <option value="long">Long</option>
+              </select>
+
+              <label for="difficulty" class="bold">Choose a Difficulty</label>
+              <select name="difficulty" id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+              </select>
+            </div>
+
+            <!-- <button id="settingsclose">Close</button> -->
+            <img
+              class="settingscloseimage"
+              id="settingsclose"
+              src="../images/close.jpg"
+              alt="test"
+            />
+          </div>
+        </div>
+        <!-- End Settings Modal -->
+
+        <!-- Start Modal -->
+        <img
+          class="gameinfoimage"
+          id="startopen"
+          src="../images/start.jpg"
+          alt="test"
+        />
+
+        <div class="startgamemodal-container" id="startgame-container">
+          <div class="modal">
+            <div id="observephase" class="phasestruct">
+              <h1>Pay Attention To Your Location!</h1>
+              <img src="" width="800px" height="auto" />
+            </div>
+
+            <div id="guessphase" style="display: none" class="phasestruct">
+              <h1>Where Was The Photo Taken?</h1>
+              <img
+                src="../images/vbmap.jpg"
+                alt="vbmap"
+                usemap="#vblocations"
+              />
+
+              <map name="vblocations">
+                <area
+                  shape="circle"
+                  coords="181,258,24"
+                  id="vblocation_1"
+                  href="#"
+                  onclick="handleLocationClick('vblocation_1'); return false;"
+                />
+                <area
+                  shape="circle"
+                  coords="480,336,21"
+                  id="vblocation_2"
+                  href="#"
+                  onclick="handleLocationClick('vblocation_2'); return false;"
+                />
+                <area
+                  shape="circle"
+                  coords="224,172,21"
+                  id="vblocation_3"
+                  href="#"
+                  onclick="handleLocationClick('vblocation_3'); return false;"
+                />
+
+                <!-- entire hot map bottom -->
+                <area
+                  shape="poly"
+                  coords="627,627,591,604,563,610,537,611,492,613,487,588,458,593,434,586,440,568,412,552,394,540,367,520,346,493,328,471,322,450,293,441,275,416,246,393,243,372,238,341,209,343,199,345,183,340,147,312,136,286,104,266,111,242,112,208,136,188,150,155,161,146,176,117,212,107,231,108,257,90,312,146,325,118,332,100,361,103,377,90,406,100,422,117,455,106,508,111,529,117,539,93,559,96,572,111,577,152,574,171,563,193,557,213,557,243,579,262,573,291,604,301,611,333,607,363,598,387,576,386,584,407,558,457,569,477,567,491,573,515,586,534,607,552,618,546,627,560,636,575,660,605"
+                  id="vblocation_0"
+                  href="#"
+                  onclick="handleLocationClick('vblocation_0'); return false;"
+                />
+              </map>
+            </div>
+
+            <div id="resultphase" style="display: none" class="phasestruct">
+              <img
+                src="../images/thrillseekerlogo.jpg"
+                alt="map"
+                width="800px"
+                height="auto"
+              />
+
+              <h2 id="final-score">You Scored: 0 out of 0</h2>
+
+              <!-- <button id="gameclose">Exit</button> -->
+              <img
+                class="settingscloseimage"
+                id="gameclose"
+                src="../images/close.jpg"
+                alt="test"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- End Start Modal -->
+      </div>
     </div>
+
     <!-- End of Main game container-->
 
-    <script src="../parkscripts.js"></script>
+    <script src="../vbscript.js"></script>
   </body>
 </html>
