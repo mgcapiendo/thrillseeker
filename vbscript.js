@@ -36,8 +36,8 @@ const timerDisplay = document.querySelector(".timer");
 const settingsCloseButton = document.getElementById("settingsclose");
 
 const difficultySettings = {
-  easy: 10,
-  medium: 5,
+  easy: 8,
+  medium: 4,
   hard: 2,
 };
 

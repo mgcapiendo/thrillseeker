@@ -29,7 +29,6 @@
     <!-- Main game container-->
     <div class="game-container" id="game_container">
       <a href="../index.html">
-        <!-- <h1 id="home">Thrill Seeker</h1> -->
         <img
           id="home"
           class="coverimages"
@@ -40,28 +39,190 @@
         />
       </a>
 
-      <p>Currently Under Development, Come Back Soon!</p>
-      <h5>Click the logo to return home</h5>
-
-      <!-- <div class="navbar">
-        <button class="info">Game Info</button>
-        <button class="settings">Settings</button>
-        <button class="start">Start</button>
+      <!-- round and timer display -->
+      <div class="controls">
+        <button class="round">Waiting on Settings...</button>
+        <button class="timer">Waiting on Settings...</button>
       </div>
 
+      <!-- map preview -->
       <img
         class="images"
-        src="https://www.themeparkreview.com/parks/pimages/Universal_Studios_Hollywood/2006_Park_Map/ush_2006_map_779x600.jpg"
+        src="../images/usmap.jpg"
+        width="740px"
+        height="auto"
         alt="map of universal studios"
       />
 
-      <div class="controls">
-        <button class="round">Round Counter</button>
-        <button class="timer">Timer</button>
-      </div> -->
+      <!-- bottom nav bar -->
+      <div class="navbar">
+        <!-- Game Info Modal -->
+        <!-- <button id="infoopen">Game Info</button> -->
+        <img
+          class="gameinfoimage"
+          id="infoopen"
+          src="../images/gameinfo.jpg"
+          alt="test"
+          width="300px"
+          height="auto"
+        />
+
+        <div class="infoModalcontainer" id="info-container">
+          <div class="modal">
+            <h1>Instructions</h1>
+            <p>
+              You will have a set amount of rounds to guess the location of
+              where your photo was taken within the countdown timer by clicking
+              on the map with your guess
+            </p>
+            <!-- <button id="infoclose">Close</button> -->
+            <img
+              class="closeinfoimage"
+              id="infoclose"
+              src="../images/close.jpg"
+              alt="test"
+            />
+          </div>
+        </div>
+        <!-- End Game Info Modal -->
+
+        <!-- Settings Modal -->
+        <img
+          class="gameinfoimage"
+          id="settingsopen"
+          src="../images/settings.jpg"
+          alt="test"
+        />
+        <div class="settingsModalcontainer" id="settings-container">
+          <div class="modal">
+            <h1>Settings</h1>
+            <ul class="ioasettings">
+              <li>
+                Difficulty changes the amount of time you have each round.
+              </li>
+              <li>
+                Rounds changes the amount of rounds you will play through.
+              </li>
+            </ul>
+
+            <div class="settings-selector">
+              <label for="round" class="bold">Choose rounds</label>
+              <select name="round" id="round">
+                <option value="quick">Quick</option>
+                <option value="normal">Normal</option>
+                <option value="long">Long</option>
+              </select>
+
+              <label for="difficulty" class="bold">Choose a Difficulty</label>
+              <select name="difficulty" id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+              </select>
+            </div>
+
+            <!-- <button id="settingsclose">Close</button> -->
+            <img
+              class="settingscloseimage"
+              id="settingsclose"
+              src="../images/close.jpg"
+              alt="test"
+            />
+          </div>
+        </div>
+        <!-- End Settings Modal -->
+
+        <!-- Start Modal -->
+        <img
+          class="gameinfoimage"
+          id="startopen"
+          src="../images/start.jpg"
+          alt="test"
+        />
+
+        <div class="startgamemodal-container" id="startgame-container">
+          <div class="modal">
+            <div id="observephase" class="phasestruct">
+              <h1>Pay Attention To Your Location!</h1>
+              <img src="" width="800px" height="auto" />
+            </div>
+
+            <!-- Add more images >10 -->
+            <div id="guessphase" style="display: none" class="phasestruct">
+              <h1>Where Was The Photo Taken?</h1>
+              <img
+                src="../images/usmap.jpg"
+                alt="us map"
+                usemap="#locations"
+              />
+
+              <map name="locations">
+                <area
+                  shape="circle"
+                  id="uslocation_1"
+                  coords="208,288,19"
+                  alt="main street"
+                  href="#"
+                  onclick="handleLocationClick('uslocation_1'); return false;"
+                />
+                <area
+                  shape="circle"
+                  id="uslocation_2"
+                  coords="68,609,19"
+                  alt="left before main entrance"
+                  href="#"
+                  onclick="handleLocationClick('uslocation_2'); return false;"
+                />
+                <area
+                  shape="circle"
+                  id="uslocation_3"
+                  coords="131,465,17"
+                  alt="outside of descpicable me"
+                  href="#"
+                  onclick="handleLocationClick('uslocation_3'); return false;"
+                />
+                <!-- hot map bottom layer -->
+                <area
+                  shape="poly"
+                  id="uslocation_0"
+                  coords="12,652,54,630,84,640,160,613,162,594,176,587,164,567,176,558,180,566,249,590,266,581,256,561,254,539,304,522,310,529,373,639,437,613,492,667,522,685,539,683,543,654,518,623,556,589,573,543,542,527,525,541,490,525,520,475,611,523,637,480,630,476,638,460,705,501,716,495,722,527,740,525,739,433,713,420,695,381,741,376,739,309,700,323,682,340,640,336,644,315,659,321,681,287,652,217,606,183,552,170,538,185,419,186,270,177,167,137,157,143,190,153,175,197,102,190,50,244,6,305,1,331,0,402,23,416,58,422,1,500" 
+                  href="#"
+                  onclick="handleLocationClick('uslocation_0'); return false;"
+                />
+              </map>
+            </div>
+
+            <div id="resultphase" style="display: none" class="phasestruct">
+              <img
+                src="../images/thrillseekerlogo.jpg"
+                alt="map"
+                width="800px"
+                height="auto"
+              />
+
+              <h2 id="final-score">You Scored: 0 out of 0</h2>
+
+              <!-- <button id="gameclose">Exit</button> -->
+              <img
+                class="settingscloseimage"
+                id="gameclose"
+                src="../images/close.jpg"
+                alt="test"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- End Start Modal -->
+      </div>
+
+      
+
+      
+
+      
     </div>
     <!-- End of Main game container-->
 
-    <script src="../parkscripts.js"></script>
+    <script src="../usscript.js"></script>
   </body>
 </html>

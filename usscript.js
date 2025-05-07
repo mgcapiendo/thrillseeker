@@ -136,12 +136,12 @@ function randomImage() {
     setTimeout(function () {
       let randomNum;
       do {
-        randomNum = Math.floor(Math.random() * 8) + 1;
+        randomNum = Math.floor(Math.random() * 3) + 1;
       } while (usedImage.includes(randomNum));
 
       usedImage.push(randomNum);
 
-      img.src = "../ioaimages/random_" + randomNum + ".jpg";
+      img.src = "../usimages/usrandom_" + randomNum + ".jpg";
 
       setCorrectLocation(randomNum);
       resetLocations();
@@ -166,37 +166,23 @@ let score = 0;
 let currentCorrectLocation = null;
 
 function resetLocations() {
-  document.getElementById("location_1").onclick = function () {
-    handleLocationClick("location_1");
+  document.getElementById("uslocation_1").onclick = function () {
+    handleLocationClick("uslocation_1");
   };
-  document.getElementById("location_2").onclick = function () {
-    handleLocationClick("location_2");
+  document.getElementById("uslocation_2").onclick = function () {
+    handleLocationClick("uslocation_2");
   };
-  document.getElementById("location_3").onclick = function () {
-    handleLocationClick("location_3");
+  document.getElementById("uslocation_3").onclick = function () {
+    handleLocationClick("uslocation_3");
   };
-  document.getElementById("location_4").onclick = function () {
-    handleLocationClick("location_4");
-  };
-  document.getElementById("location_5").onclick = function () {
-    handleLocationClick("location_5");
-  };
-  document.getElementById("location_6").onclick = function () {
-    handleLocationClick("location_6");
-  };
-  document.getElementById("location_7").onclick = function () {
-    handleLocationClick("location_7");
-  };
-  document.getElementById("location_8").onclick = function () {
-    handleLocationClick("location_8");
-  };
-  document.getElementById("location_0").onclick = function () {
-    handleLocationClick("location_0");
+  //  entire map bottom
+  document.getElementById("uslocation_0").onclick = function () {
+    handleLocationClick("uslocation_0");
   };
 }
 
 function setCorrectLocation(randomNum) {
-  currentCorrectLocation = "location_" + randomNum;
+  currentCorrectLocation = "uslocation_" + randomNum;
 }
 
 function handleLocationClick(locationID) {
